@@ -23,9 +23,9 @@ function makeBeer (cb) {
 
 /* TODO: Identify every package with a unique serial number. */
 function packageAlcohol (packs, cb) {
-    console.log("Packaging: " + packs);
+    console.log("Packaging: " + JSON.stringify(packs));
     setTimeout(function () {
-        console.log ("Package ready: " + packs);
+        console.log ("Package ready: " + JSON.stringify(packs));
         cb({
             serial: 0,
             contents: packs
@@ -35,7 +35,7 @@ function packageAlcohol (packs, cb) {
 
 function ship (delivery) {
     setTimeout (function () {
-        console.log("Shipping: " + delivery);
+        console.log("Shipping: " + JSON.stringify(delivery));
     }, 500);
 }
 
