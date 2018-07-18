@@ -4,7 +4,7 @@
   "description": "",
   "main": "UnitTasks.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 15000"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Ruzovska/asynchronous/issues"
   },
-  "homepage": "https://github.com/Ruzovska/asynchronous#readme"
+  "homepage": "https://github.com/Ruzovska/asynchronous#readme",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
 }
