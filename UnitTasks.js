@@ -30,7 +30,7 @@ function packageAlcohol (packs, cb) {
             serial: 0,
             contents: packs
         });
-    }, 3000, packs);
+    }, 3000);
 }
 
 function ship (delivery) {
