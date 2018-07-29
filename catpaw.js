@@ -1,6 +1,6 @@
 const app = require('./UnitTasks.js');
 
-function makeAlcohol(a) {
+function makeAlcohol(a,cb) {
   console.log('Got ' + a.length + ' tasks!')
   var tasksReady = 0;
   var tasksLeft = a.length;
@@ -12,8 +12,14 @@ function makeAlcohol(a) {
       tasksReady = tasksReady + 1;
       tasksLeft = tasksLeft - 1;
       console.log(tasksReady + ' task is ready', tasksLeft + ' is left!');
+      cb(pack);
     });
   });
 };
 
-makeAlcohol([app.makeWine, app.makeBeer, app.makeWine]);
+makeAlcohol([app.makeWine, app.makeBeer, app.makeWine], packPacker);
+var oa = [];
+function packPacker(ia) {
+  oa.push(ia);
+  console.log(oa);
+};
