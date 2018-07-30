@@ -6,22 +6,24 @@ function makeAlcohol(a,cb) {
   var tasksLeft = a.length;
   packs = [];
   a.map(function(x,i) {
-    //x(function(pack) {console.log(pack)});
-    //console.log(i+1 + ' task is ready', a.length-i-1 + ' is left!')
+    // x(function(pack) {console.log(pack)});
+    // console.log(i+1 + ' task is ready', a.length-i-1 + ' is left!')
     x(function(pack) {
       console.log(pack);
       tasksReady = tasksReady + 1;
       tasksLeft = tasksLeft - 1;
       console.log(tasksReady + ' task is ready', tasksLeft + ' is left!');
       cb(pack, packs);
+      if (tasksLeft === 0) {
+        console.log(packs);
+      };
     });
   });
-  setTimeout(function() {console.log(packs)}, 10000);
+  // setTimeout(function() {console.log(packs)}, 10000);
 };
 
 makeAlcohol([app.makeWine, app.makeBeer, app.makeWine], packPacker);
 
 function packPacker(inA, outA) {
   outA.push(inA);
-  console.log(outA);
 };
